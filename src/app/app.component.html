@@ -1,0 +1,23 @@
+<h3>Change detection triggered from parent</h3>
+
+<child [data]="objects" #child [pseudoBool]="pseudoBool"></child>
+
+<child2
+  #children
+  *ngFor="let obj of objects"
+  [data]="obj"
+  [pseudoBool]="pseudoBool"
+></child2>
+
+<button type="button" (click)="IncrementPrice()">Increment Price</button>
+<div>
+  <button type="button" (click)="TriggerViaService()">
+    Trigger via Service
+  </button>
+  <button type="button" (click)="TriggerViaReference()">
+    Trigger via template reference
+  </button>
+  <button type="button" (click)="TriggerViaPseudoProp()">
+    trigger via pseudo property
+  </button>
+</div>
